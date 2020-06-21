@@ -8,39 +8,53 @@
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="css/favicon.png" sizes="16x16">
     <title>Eth Sec</title>
 
     <script type="text/javascript" src="/eel.js"></script>
 </head>
 <body onload="load()">
-    <div class="bg container-fluid">
-        <div class="row justify-content-center">
-            <div class="col col-12 col-sm-6 col-lg-3">
-                <form class="form-container">
-                    <h2 id="company-name">Eth Sec</h2>
-                    
-                    <div class="form-group">
-                      <label id="emailTitle">Email address</label>
-                      <input type="email" class="form-control shadow-none" id="emailInput" aria-describedby="emailHelp" autocomplete="off">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-
-                    <div class="form-group" id="passContainer">
-                        <label id="passwordTitle">New Password</label>
-                        <input type="text" class="form-control shadow-none" id="userPassword" disabled>
-                    </div>
-                    
-                    <div class="form-group form-check">
-                      <input type="checkbox" id="check-email" class="form-check-input" onchange="activateInput()">
-                      <label class="form-check-label">Send password via Email</label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-info btn-block" onclick="activate_generator()">Generate Password</button>
-                </form>
-            </div>
-        </div>
+    <!-- This div will cover entire page to show loading animation. -->
+    <div id="loading">
+        <img src="css/loading-anim.gif"/>
     </div>
 
+        <div class="bg container-fluid">
+            <div class="row justify-content-center">
+                <div class="col col-12 col-sm-6 col-lg-3">
+                    <form class="form-container">
+                        <h2 id="company-name">Eth Sec</h2>
+                        
+                        <!-- The email option is disable onload. -->
+                        <div class="form-group">
+                            <label id="emailTitle">Email address</label>
+                            <input type="email" class="form-control shadow-none" id="emailInput" aria-describedby="emailHelp" autocomplete="off">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+
+                        <!-- 
+                            This container is hidden by default.
+                            Displays once the user generates password.
+                        -->
+                        <div class="form-group" id="passContainer">
+                            <label id="passwordTitle">New Password</label>
+                            <input type="text" class="form-control shadow-none" id="userPassword" disabled>
+                        </div>
+                        
+                        <!-- This checkbox activates the email option on toggle. -->
+                        <div class="form-group form-check">
+                            <input type="checkbox" id="check-email" class="form-check-input" onchange="activateInput()">
+                            <label class="form-check-label">Send password via Email</label>
+                        </div>
+                        
+                        <!-- Activates the password generator function. -->
+                        <button type="submit" class="btn btn-info btn-block" onclick="activate_generator()">Generate Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    <!-- Imports custom JavaScript file. -->
     <script type="text/javascript" src="js/eel.js"></script>
     <!-- JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
